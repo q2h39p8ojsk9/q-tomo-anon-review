@@ -1,0 +1,44 @@
+{
+  "model": {
+    "architecture": "modern",
+    "d_model": 64,
+    "n_layers": 2,
+    "n_heads": 4,
+    "n_kv_heads": 4,
+    "max_seq_len": 16,
+    "qk_norm": true,
+    "dropout": 0.0
+  },
+  "data": {
+    "rule_family": "copy",
+    "modulus": 31,
+    "number_base": 10,
+    "n_rule_relations": 2,
+    "n_memory_relations": 2,
+    "train_fraction": 0.7,
+    "exposures_per_pair": 4,
+    "seed": 17
+  },
+  "train": {
+    "steps": 40,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "min_learning_rate": 0.0001,
+    "warmup_steps": 5,
+    "eval_interval": 20,
+    "log_interval": 10,
+    "checkpoint_interval": 40,
+    "precision": "fp32",
+    "device": "auto",
+    "output_dir": "runs/smoke"
+  },
+  "probe": {
+    "bits": [6, 4],
+    "seeds": [0, 1],
+    "layerwise": true,
+    "layer_bits": [4],
+    "layer_seeds": [0],
+    "batch_size": 128,
+    "min_correct_per_group": 2
+  }
+}

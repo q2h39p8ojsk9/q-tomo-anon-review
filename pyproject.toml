@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "q-tomo"
+version = "0.1.0"
+description = "Quantization tomography for separating memorization from generalization."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+pretrained = [
+  "accelerate>=1.0",
+  "peft>=0.14",
+  "safetensors>=0.4",
+  "transformers>=4.46,<6",
+]
+
+[project.scripts]
+q-tomo = "q_tomo.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["q_tomo*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+runs/
+dist/
+*.egg-info/
+
+# Local browser profile created during manuscript figure inspection. It may
+# contain cookies, login databases, and other private browser state.
+paper/edge-profile-unlearning/
+
+# Local submission/build bundles. paper.zip previously captured the browser
+# profile above, so archives are never release inputs.
+paper.zip
+paper/*.zip
+paper/build/
+
+# Generated exports are rebuilt from source for releases.
+output/
+
+# Manuscript sources and local drafting artifacts are maintained separately
+# from the anonymous code release.
+paper/
